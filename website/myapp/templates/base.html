@@ -1,0 +1,137 @@
+<!-- /myapp/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/thegirltyler/brand-camp/128/Write-Pencil-Mail-icon.png" width="128" height="128">
+    <link rel="stylesheet" href="/static/css/css2.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <title>{% block title %} Notes App {% endblock %}</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Notes App</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/feature">Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+                {% if user is none %}
+                <li class="nav-item">
+                    <a class="btn btn-outline-light my-2 my-sm-0 mx-2" href="/login">Login</a>
+                </li>
+                {% else %}
+                <li class="nav-item mr-3">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar-list-4">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="https://icons.iconarchive.com/icons/icojam/blue-bits/24/user-male-icon.png"
+                                        width="40" height="40" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Dashboard</a>
+                                    <a class="dropdown-item" href="/profile">Edit Profile</a>
+                                    <a class="dropdown-item" href="/logout">Log Out</a>
+                                </div>
+                            </li>
+
+                            {% endif %}
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar End-->
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer Start -->
+    <footer class="contrast-footer footer-shadow-dark p-5">
+        <div class="container d-flex flex-column">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="d-flex flex-row align-items-center me-3">
+                        <div class="footer-logo">
+                            <img src="https://icons.iconarchive.com/icons/thegirltyler/brand-camp/128/Write-Pencil-Mail-icon.png"
+                                alt="Logo" />
+                        </div>
+                        <h2 class="footer-header ms-3 mb-0">
+                            Notes App
+                        </h2>
+                    </div>
+                    <p class="footer-text my-3">
+                        We are creating High-Quality Resources and tools to Aid developers during the development
+                        of their projects
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-sitemaps">
+                        <div class="footer-sitemap">
+                            <h2 class="footer-sitemap-header">Documentation</h2>
+                            <span class="footer-sitemap-link">Python</span>
+                            <span class="footer-sitemap-link">Java</span>
+                            <span class="footer-sitemap-link">Angular</span>
+                            <span class="footer-sitemap-link">Html</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+/* styles.css */
+
+.navbar-dark {
+  background-color: #343a40; /* Dark background color for the navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff; /* Text color for navbar links */
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-color: #ffffff; /* Color for the navbar toggler icon */
+}
+
+.contrast-footer {
+  background-color: #343a40; /* Background color for the footer */
+  color: #ffffff; /* Text color for the footer */
+}
+
+.footer-shadow-dark {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Dark shadow for footer */
+}
+
+.footer-logo img {
+  width: 50px; /* Adjust the width of the logo */
+  height: 50px; /* Adjust the height of the logo */
+}
+
+.footer-header {
+  font-weight: 800;
+}
+
+.footer-text {
+  width: 250px;
+}
+
+.footer-sitemaps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-sitemap {
+  flex: 1;
+  margin-right: 20px; /* Adjust the margin between sitemaps */
+}
+
+.footer-sitemap-header {
+  color: #ffffff; /* Header color for the sitemap */
+}
+
+.footer-sitemap-link {
+  display: block;
+  color: #ffffff; /* Link color for the sitemap */
+  margin-bottom: 5px; /* Adjust the margin between links */
+}

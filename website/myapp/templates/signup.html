@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/signup.css"> <!-- Include the separated CSS file -->
+  <title>Signup Page</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="signup-container">
+    <div class="signup-logo">
+      <img src="https://icons.iconarchive.com/icons/thegirltyler/brand-camp/128/Write-Pencil-Mail-icon.png" alt="Logo">
+    </div>
+    <div class="cancel-icon" onclick="cancelSignup()">
+      <img src="https://icons.iconarchive.com/icons/picol/picol/16/Cancel-icon.png" width="16" height="16" alt="cancel">
+
+    </div>
+    <h2 class="signup-header">Signup</h2>
+    
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input type="email" class="form-control" id="username" name="username" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <input type="tel"  name="mobile"   class="form-control" id="mobile" placeholder="Enter mobile number">
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm password">
+      </div>
+      
+      <button type="submit" class="btn signup-button btn-block">Signup</button>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="/login">Sign In</a></p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function cancelSignup() {
+    // Add any cancel logic or redirect to another page
+    window.location.href = '/';
+  }
+</script>
+
+</body>
+</html>

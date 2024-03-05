@@ -1,0 +1,106 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+{% if user %}
+<!-- create_post.html  -->
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+           
+          <div class="card-body">
+            {% for message in   messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+            </div> 
+        {% endfor %}
+            <h2 class="card-title text-center">Add Notes</h2>
+            
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              
+              <!-- Title field -->
+              <div class="form-group">
+                <label for="id_title">Title:</label>
+                <input type="text" id="id_title" name="title" class="form-control" required>
+              </div>
+              
+              <!-- Dropdown for category selection -->
+              <div class="form-group">
+                <label for="id_category">Category:</label>
+                <select id="id_category" name="category" class="form-control" required>
+                  <option selected>Select Category</option>
+                  <option>Core Python</option>
+                  <option>Advance Python</option>
+                  <option>JAVA</option>
+                  <option>Android</option>
+                  <option>Others</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+              
+              <!-- File upload field -->
+              <div class="form-group">
+                <label for="id_file">Upload File:</label>
+                <input type="file" id="id_file" name="file" class="form-control-file" required>
+              </div>
+              
+              <!-- Description textarea -->
+              <div class="form-group">
+                <label for="id_description">Description:</label>
+                <textarea id="id_description" name="description" class="form-control" rows="5" required></textarea>
+              </div>
+              
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block">Submit Post</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--End post-->
+{% else %}
+<div class="container text-center my-4">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static '/img/python_logo.jfif' %}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Python</h5>
+                    <p class="card-text">Learn Python programming for free</p>
+                    <a href="/" class="btn btn-primary">Book Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static '/img/java_logo.png' %}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">JAVA</h5>
+                    <p class="card-text">Best JAVA Training in Rajkot</p>
+                    <a href="/" class="btn btn-primary">Book Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static '/img/php_logo.png'%}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">PHP</h5>
+                    <p class="card-text">Internship with PHP Project</p>
+                    <a href="/" class="btn btn-primary">Book Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/signup.css">
+  <title>Login Page</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="login-container">
+     
+      
+
+      <div class="cancel-icon" onclick="cancelLogin()">
+        <!-- Replace the path with the actual URL of your cancel icon -->
+        <img src="https://icons.iconarchive.com/icons/picol/picol/16/Cancel-icon.png" width="16" height="16" alt="cancel">
+
+      </div>
+      <div class="login-logo">
+        <img src="https://icons.iconarchive.com/icons/thegirltyler/brand-camp/128/Write-Pencil-Mail-icon.png" width="24" height="24" alt="Logo">
+      </div>
+      {% for message in   messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                </div> 
+            {% endfor %}
+      <h2 class="login-header">Login</h2>
+      <form  method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username" class="form-label">Username</label>
+          <input type="email"  name="username"  class="form-control" id="username" placeholder="Enter email">
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password"  name="password"  class="form-control" id="password" placeholder="Enter password">
+          <p class="forgot-password-link"><a href="forgot-password.html">Forgot Password?</a></p>
+        </div>
+        <button type="submit" class="btn login-button btn-block">Login</button>
+      </form>
+      <p class="signup-link"><a href="/signup">Don't have an account? Sign Up</a></p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function cancelLogin() {
+      // Replace the URL in single quotes with the URL of the page you want to redirect to
+      window.location.href = '/';
+    }
+  </script>
+
+</body>
+
+</html>

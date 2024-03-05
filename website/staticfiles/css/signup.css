@@ -1,0 +1,105 @@
+/* Common styles for both login and signup pages */
+
+body {
+  background-color: #f8f9fa; /* Background color for the page */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #343a40; /* Label color for form fields */
+}
+
+.form-control {
+  border-radius: 4px;
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Styles for login page */
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* Background color for the login container */
+  border-radius: 8px;
+  position: relative;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo img {
+  width: 100px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.login-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #343a40; /* Header color for the login form */
+}
+
+.login-button {
+  background-color: #343a40; /* Background color for the login button */
+  color: #ffffff; /* Text color for the login button */
+}
+
+.forgot-password-link {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Styles for signup page */
+
+.signup-container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 18px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* Background color for the signup container */
+  border-radius: 8px;
+  position: relative;
+}
+
+.signup-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-logo img {
+  width: 100px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.signup-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #343a40; /* Header color for the signup form */
+}
+
+.signup-button {
+  background-color: #343a40; /* Background color for the signup button */
+  color: #ffffff; /* Text color for the signup button */
+}

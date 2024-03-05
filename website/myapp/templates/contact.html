@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+
+          <div class="card-body">
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ message }}
+            </div>
+            {% endfor %}
+            <h2 class="card-title text-center">Get in Touch Now</h2>
+
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+
+              <div class="form-group">
+                <label for="id_title">Name:</label>
+                <input type="text" id="id_title" name="name" class="form-control" required>
+              </div>
+
+
+              <div class="form-group">
+                <label for="id_title">Email:</label>
+                <input type="email" id="id_title" name="email" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="id_title">Subject:</label>
+                <input type="text" id="id_title" name="subject" class="form-control" required>
+              </div>
+
+
+              <div class="form-group">
+                <label for="id_description">Messages:</label>
+                <textarea id="id_description" name="msg" class="form-control" rows="5" required></textarea>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+
+  <!--link-page start-->
+
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src="https://icons.iconarchive.com/icons/thegirltyler/brand-camp/128/Write-Pencil-Mail-icon.png" class="img-fluid" alt="Company Logo">
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-3">
+        <p class="text-center"><strong>Address:</strong></p>
+        <p class="text-center">Gundala Read,Kaniya Pan Street,</p>
+        <p class="text-center">Gondal,Dt-Rajkot,360311</p>
+      </div>
+      <div class="col-md-3">
+        <p class="text-center"><strong>Phone:</strong></p>
+        <p class="text-center">+91-6351959948</p>
+      </div>
+      <div class="col-md-3">
+        <p class="text-center"><strong>Email:</strong></p>
+        <p class="text-center">manjusaanjali@gmail.com</p>
+      </div>
+      <div class="col-md-3">
+        <p class="text-center"><strong>Website:</strong></p>
+        <p class="text-center"><a href="https://example.com" target="_blank">google.com</a></p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
